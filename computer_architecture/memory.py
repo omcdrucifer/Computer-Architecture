@@ -6,7 +6,7 @@ class Memory:
 
         logging.basicConfig(
                 level=logging.INFO,
-                format='%asctime)s - %(levelname)s - Memory: %(message)s'
+                format='%(asctime)s - %(levelname)s - Memory: %(message)s'
                 )
         self.logger = logging.getLogger(__name__)
 
@@ -45,7 +45,7 @@ class Memory:
         if not isinstance(value, int):
             self.logger.error(f"Type error: Memory value must be an integer")
             raise TypeError("Memory values must be integers")
-        if value > 0x7FFFFFFF or value < ~0x80000000:
+        if value > 0x7FFFFFFF or value < -0x80000000:
             self.logger.error(f"Overflow error: Value {value} exceeds 32-bit bounds")
             raise OverflowError("Value exceeds 32-bit bounds")
 
@@ -68,5 +68,3 @@ class Memory:
     def reset_to_initial(self):
         self.memory = self.initial_state.copy()
         self.logger.info("Memory reset to initial state")
-
-
