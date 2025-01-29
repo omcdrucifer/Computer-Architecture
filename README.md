@@ -8,3 +8,5 @@ I am still in the thinking process of what architecture I want to simulate,
 so I will need to update the README after I do some more research.
 
 After reviewing the course material, I see the goal is to emulate a MIPS architecture.
+
+This program mimics a system with 1024 bytes of memory and 32 registers.

@@ -114,7 +114,7 @@ class CPU:
                 self.registers[rt] = result
 
             self.logger.debug(f"ADDI: {rt} = {rs}({rs_value}) + {immd} = {result}")
-            self.pc += 4 # increment program counter
+            self.pc += 4 
 
         except Exception as e:
             self.logger.error(f"Error executing ADDI: {str(e)}")
@@ -133,7 +133,7 @@ class CPU:
                 self.registers[rd] = result
 
             self.logger.debug(f"SUB: {rd} = {rs}({rs_value}) - {rt}({rt_value}) = {result}")
-            self.pc += 4 # increment program counter
+            self.pc += 4 
 
         except Exception as e:
             self.logger.error(f"Error executing SUB: {str(e)}")
@@ -153,7 +153,7 @@ class CPU:
                 self.registers[rd] = result
 
             self.logger.debug(f"SLT: {rd} = ({rs}({rs_value}) < {rt}({rt_value})) = {result}")
-            self.pc += 4 # increment program counter
+            self.pc += 4 
 
         except Exception as e:
             self.logger.error(f"Error executing SLT: {str(e)}")
